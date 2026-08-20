@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Parking Administration</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">North Valley University</p>
+      <h1>Parking Administration</h1>
+    </div>
+
+    <span class="demo-label">Sanitized Demo</span>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-toolbar">
+      <div>
+        <p class="eyebrow">Administrative records</p>
+        <h2>Registered vehicles</h2>
+      </div>
+
+      <div class="toolbar-actions">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search name, email, ID or plate"
+          aria-label="Search parking registrations"
+        >
+
+        <button id="refresh-button" type="button">
+          Refresh
+        </button>
+
+        <a class="secondary-link" href="/">
+          New registration
+        </a>
+      </div>
+    </section>
+
+    <section class="statistics">
+      <article>
+        <span>Active registrations</span>
+        <strong id="registration-count">—</strong>
+      </article>
+
+      <article>
+        <span>Registered vehicles</span>
+        <strong id="vehicle-count">—</strong>
+      </article>
+
+      <article>
+        <span>API status</span>
+        <strong id="api-status">Loading</strong>
+      </article>
+    </section>
+
+    <section class="table-card">
+      <div id="loading-message" class="loading-message">
+        Loading parking records...
+      </div>
+
+      <div
+        id="error-message"
+        class="result error hidden"
+        role="alert"
+      ></div>
+
+      <div class="table-wrapper">
+        <table id="registration-table" class="hidden">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>Institutional ID</th>
+              <th>Contact</th>
+              <th>Vehicles</th>
+              <th>Last updated</th>
+            </tr>
+          </thead>
+
+          <tbody id="registration-body"></tbody>
+        </table>
+      </div>
+
+      <div id="empty-message" class="empty-message hidden">
+        No parking registrations were found.
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
